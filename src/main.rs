@@ -1,3 +1,5 @@
+use chrono::NaiveTime;
+use chrono::Utc;
 use regex::Regex;
 use std::io;
 
@@ -28,6 +30,8 @@ fn main() {
         }
         println!("Enter your date of birth like 2014-01-01.");
     };
+    let end_date = Utc::now().date();
 
+    let start_date = NaiveTime::parse_from_str("2014-5-17T12:34:56+09:30", "%Y-%m-%d");
     println!("Your date of birth: '{}'", date);
 }
